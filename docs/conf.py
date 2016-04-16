@@ -53,7 +53,7 @@ source_parsers = {
 master_doc = 'index'
 
 # General information about the project.
-project = u'MiniMap'
+project = u'AdmobPlugin'
 copyright = u'2016, Vladyslav Melnychenko'
 author = u'Vladyslav Melnychenko'
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; MiniMap 1.1 documentation</title>
+  <title>Import &mdash; MiniMap 1.1 documentation</title>
   
 
   
@@ -80,7 +80,12 @@
             
             
                 <!-- Local TOC -->
-                <div class="local-toc"><ul class="simple">
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Import</a><ul>
+<li><a class="reference internal" href="#ios-common-errors">IOS common errors</a></li>
+<li><a class="reference internal" href="#android-common-errors">Android common errors</a></li>
+</ul>
+</li>
 </ul>
 </div>
             
@@ -111,7 +116,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="#">Docs</a> &raquo;</li>
       
-    <li>&lt;no title&gt;</li>
+    <li>Import</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -125,44 +130,56 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p># Import
-To start using [this plugin](<a class="reference external" href="https://www.assetstore.unity3d.com/en/#!/content/57268">https://www.assetstore.unity3d.com/en/#!/content/57268</a>) please watch [this](<a class="reference external" href="https://www.youtube.com/watch?v=S7F9enxcvTE">https://www.youtube.com/watch?v=S7F9enxcvTE</a>) tutorial. Or follow these steps:</p>
-<p>1 Drag Admob prefab from <cite>Area730/Admob/Prefabs</cite> into your scene. You need to add this prefab to your game only once as <cite>AdmobManager</cite> is a singleton.</p>
-<p>![](<a class="reference external" href="https://www.dropbox.com/s/e1ojjhmewycn2bu/1.png?raw=1">https://www.dropbox.com/s/e1ojjhmewycn2bu/1.png?raw=1</a>)</p>
+  <div class="section" id="import">
+<span id="import"></span><h1>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h1>
+<p>To start using <a class="reference external" href="https://www.assetstore.unity3d.com/en/#!/content/57268">this plugin</a> please watch
+tutorial.</p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=S7F9enxcvTE"><img alt="IMAGE ALT TEXT HERE" src="https://img.youtube.com/vi/S7F9enxcvTE/0.jpg" /></a></p>
+<p>Or follow these steps:</p>
+<p>1 Drag Admob prefab from <code class="docutils literal"><span class="pre">Area730/Admob/Prefabs</span></code> into your scene. You need to add this prefab to your game only once as <code class="docutils literal"><span class="pre">AdmobManager</span></code> is a singleton.</p>
+<p><img alt="" src="https://www.dropbox.com/s/e1ojjhmewycn2bu/1.png?raw=1" /></p>
 <p>2 Set Admob unit ids and you are almost done</p>
-<p>![](<a class="reference external" href="https://www.dropbox.com/s/tiqm17u1nh19uin/2.png?raw=1">https://www.dropbox.com/s/tiqm17u1nh19uin/2.png?raw=1</a>)</p>
-<p>3 To show banner  call ` AdmobManager.Instance.RequestBanner(AdPosition position)` where position is <cite>enum</cite> and can be:
-<code class="docutils literal"><span class="pre">`c#</span>
-<span class="pre">AdPosition.Top</span>
-<span class="pre">AdPosition.Bottom</span>
-<span class="pre">AdPosition.TopLeft</span>
-<span class="pre">AdPosition.TopRight</span>
-<span class="pre">AdPosition.BottomLeft</span>
-<span class="pre">AdPosition.BottomRight</span>
-<span class="pre">`</span></code>
-You can also specify the size of the banner as second parameter. The default size is 320x50.
-To show interstitial you have first to load it by calling <cite>AdmobManager.Instance.RequestInterstitial()</cite>. After the interstitial is loaded, the <cite>OnInterstitialLoaded()</cite> callbacks will be invoked. Admob prefab comes with default attached callback functions (see <cite>Area730/Admob/Scripts/AdmobController.cs</cite>). You can also add your own if you want.</p>
-<p>![](<a class="reference external" href="https://www.dropbox.com/s/segyabyt9pa38iw/3.png?raw=1">https://www.dropbox.com/s/segyabyt9pa38iw/3.png?raw=1</a>)</p>
-<p>After the interstitial is loaded, you can show the ad by calling <code class="docutils literal"><span class="pre">`c#</span> <span class="pre">AdmobManager.Instance.ShowInterstitial()`</span></code>.</p>
+<p><img alt="" src="https://www.dropbox.com/s/tiqm17u1nh19uin/2.png?raw=1" /></p>
+<p>3 To show banner  call <code class="docutils literal"><span class="pre">AdmobManager.Instance.RequestBanner(AdPosition</span> <span class="pre">position)</span></code> where position is <code class="docutils literal"><span class="pre">enum</span></code> and can be:</p>
+<div class="highlight-c#"><div class="highlight"><pre><span></span><span class="n">AdPosition</span><span class="p">.</span><span class="n">Top</span>
+<span class="n">AdPosition</span><span class="p">.</span><span class="n">Bottom</span>
+<span class="n">AdPosition</span><span class="p">.</span><span class="n">TopLeft</span>
+<span class="n">AdPosition</span><span class="p">.</span><span class="n">TopRight</span>
+<span class="n">AdPosition</span><span class="p">.</span><span class="n">BottomLeft</span>
+<span class="n">AdPosition</span><span class="p">.</span><span class="n">BottomRight</span>
+</pre></div>
+</div>
+<p>You can also specify the size of the banner as second parameter. The default size is 320x50.
+To show interstitial you have first to load it by calling <code class="docutils literal"><span class="pre">AdmobManager.Instance.RequestInterstitial()</span></code>. After the interstitial is loaded, the <code class="docutils literal"><span class="pre">OnInterstitialLoaded()</span></code> callbacks will be invoked. Admob prefab comes with default attached callback functions (see <code class="docutils literal"><span class="pre">Area730/Admob/Scripts/AdmobController.cs</span></code>). You can also add your own if you want.</p>
+<p><img alt="" src="https://www.dropbox.com/s/segyabyt9pa38iw/3.png?raw=1" /></p>
+<p>After the interstitial is loaded, you can show the ad by calling <code class="docutils literal"><span class="pre">c#</span> <span class="pre">AdmobManager.Instance.ShowInterstitial()</span></code>.</p>
 <p>#Building projects
 After configuring your mediation you need to build your game to mobile devices. Sometimes it might cause some errors this section helps you to solve it</p>
-<p>##IOS common errors</p>
-<p>1. When you use old version of Unity(4.6 and lower) the included [GoogleMobileAds.framework](<a class="reference external" href="https://developers.google.com/admob/ios/download">https://developers.google.com/admob/ios/download</a>) in folder <cite>Assets/Plugins/IOS</cite> will not automatically linking to your project. To solve this problem copy [GoogleMobileAds.framework](<a class="reference external" href="https://developers.google.com/admob/ios/download">https://developers.google.com/admob/ios/download</a>) to the root of your exported project.
-![GoogleMobileAds must be included to libraries](<a class="reference external" href="https://www.dropbox.com/s/iuuk2cz33v3wrvc/framework.png?raw=1">https://www.dropbox.com/s/iuuk2cz33v3wrvc/framework.png?raw=1</a>)</p>
-<ol class="arabic simple" start="2">
+<div class="section" id="ios-common-errors">
+<span id="ios-common-errors"></span><h2>IOS common errors<a class="headerlink" href="#ios-common-errors" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li>When you use old version of Unity(4.6 and lower) the included <a class="reference external" href="https://developers.google.com/admob/ios/download">GoogleMobileAds.framework</a> in folder <code class="docutils literal"><span class="pre">Assets/Plugins/IOS</span></code> will not automatically linking to your project. To solve this problem copy <a class="reference external" href="https://developers.google.com/admob/ios/download">GoogleMobileAds.framework</a> to the root of your exported project.
+<img alt="GoogleMobileAds must be included to libraries" src="https://www.dropbox.com/s/iuuk2cz33v3wrvc/framework.png?raw=1" /></li>
 <li>After that you need to config your <strong>build settings</strong></li>
 </ol>
-<blockquote>
-<div>2.1 Disable bit code ![Disable bitcode](<a class="reference external" href="https://www.dropbox.com/s/ro13o7xdypg8u68/bitcode.png?raw=1">https://www.dropbox.com/s/ro13o7xdypg8u68/bitcode.png?raw=1</a>)
-2.2 Enable Modules (C and Objective-C) ![Enable modules](<a class="reference external" href="https://www.dropbox.com/s/1f55jq0fycbpja8/modules.png?raw=1">https://www.dropbox.com/s/1f55jq0fycbpja8/modules.png?raw=1</a>)</div></blockquote>
-<p>3. If you use xCode 7.2  or higher you could get the following error because of incompatibility new xCode and Unity generated files.
-![NORETURN](<a class="reference external" href="https://www.dropbox.com/s/jjdlkhzjw146t1s/Noreturn.png?raw=1">https://www.dropbox.com/s/jjdlkhzjw146t1s/Noreturn.png?raw=1</a>)
-to solve this problem just delete circled <code class="docutils literal"><span class="pre">`NORETURN`</span></code> statment.</p>
-<p>##Android common errors
-1. When you trying to build your <cite>apk</cite> unity might throw build error. It might be caused of old Android API Level. The latest version of Admob library requires API Level 23. To download this packages go to you <a href="#id1"><span class="problematic" id="id2">**</span></a>Android SDK**(the path for it find here)![Android SDK path](<a class="reference external" href="https://www.dropbox.com/s/wyjzs6rs3wf27qv/androidSDKPath.png?raw=1">https://www.dropbox.com/s/wyjzs6rs3wf27qv/androidSDKPath.png?raw=1</a>)</p>
+<p>2.1 Disable bit code <img alt="Disable bitcode" src="https://www.dropbox.com/s/ro13o7xdypg8u68/bitcode.png?raw=1" />
+2.2 Enable Modules (C and Objective-C) <img alt="Enable modules" src="https://www.dropbox.com/s/1f55jq0fycbpja8/modules.png?raw=1" /></p>
+<ol class="simple">
+<li>If you use xCode 7.2  or higher you could get the following error because of incompatibility new xCode and Unity generated files.
+<img alt="NORETURN" src="https://www.dropbox.com/s/jjdlkhzjw146t1s/Noreturn.png?raw=1" />
+to solve this problem just delete circled <code class="docutils literal"><span class="pre">NORETURN</span></code> statment.</li>
+</ol>
+</div>
+<div class="section" id="android-common-errors">
+<span id="android-common-errors"></span><h2>Android common errors<a class="headerlink" href="#android-common-errors" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li>When you trying to build your <code class="docutils literal"><span class="pre">apk</span></code> unity might throw build error. It might be caused of old Android API Level. The latest version of Admob library requires API Level 23. To download this packages go to you <strong>Android SDK</strong>(the path for it find here)<img alt="Android SDK path" src="https://www.dropbox.com/s/wyjzs6rs3wf27qv/androidSDKPath.png?raw=1" /></li>
+</ol>
 <p>Then install packages from SDK manager.
-![SDK view](<a class="reference external" href="https://www.dropbox.com/s/6kmrwnxajnthjl7/SDK.png?raw=1">https://www.dropbox.com/s/6kmrwnxajnthjl7/SDK.png?raw=1</a>)</p>
-<p>If you have another errors please contact us <a class="reference external" href="mailto:support&#37;&#52;&#48;area730&#46;com">support<span>&#64;</span>area730<span>&#46;</span>com</a></p>
+<img alt="SDK view" src="https://www.dropbox.com/s/6kmrwnxajnthjl7/SDK.png?raw=1" /></p>
+<p>If you have another errors please contact us support&#64;area730.com</p>
+</div>
+</div>
 
 
            </div>
