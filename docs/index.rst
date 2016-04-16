@@ -57,7 +57,6 @@ IOS common errors
 .. _GoogleMobileAds.framework: https://developers.google.com/admob/ios/download
 
 .. image:: _static/framework.png
-    :align: center
 
 2. After that you need to config your **build settings**  
 | 
