@@ -11,8 +11,9 @@ Import
 ------
 
 * Download this plugin_ 
-* Watch this tutorial: 
+* Watch this_ tutorial: 
 .. _plugin: https://www.assetstore.unity3d.com/en/#!/content/57268
+.. _this: https://www.youtube.com/watch?v=S7F9enxcvTE
 
 .. raw:: html
 
