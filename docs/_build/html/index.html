@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Unity 3D MiniMap &mdash; MiniMap 1.1 documentation</title>
+  <title>&lt;no title&gt; &mdash; MiniMap 1.1 documentation</title>
   
 
   
@@ -80,13 +80,7 @@
             
             
                 <!-- Local TOC -->
-                <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Unity 3D MiniMap</a><ul>
-<li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#video-tutorial">Video tutorial</a></li>
-<li><a class="reference internal" href="#components-description">Components description</a></li>
-</ul>
-</li>
+                <div class="local-toc"><ul class="simple">
 </ul>
 </div>
             
@@ -117,7 +111,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="#">Docs</a> &raquo;</li>
       
-    <li>Unity 3D MiniMap</li>
+    <li>&lt;no title&gt;</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -131,66 +125,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="unity-3d-minimap">
-<h1>Unity 3D MiniMap<a class="headerlink" href="#unity-3d-minimap" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Import the plugin package into your project</li>
-<li>Drag the MiniMap prefab from <em>Assets/MiniMap/Map_x</em> to your canvas</li>
-<li>Set the player transform (other points in the map will be relative to it) in <em>MapCanvasController</em> on <em>Canvas/MiniMap</em> scene object</li>
-<li>Add the <em>MapMarker</em> component (<em>Add Componenent -&gt; MiniMap -&gt; Map marker</em>) or drag and drop it from <em>Assets/MiniMap/Scripts</em> to the objects you want to be shown on the map.</li>
+  <p># Import
+To start using [this plugin](<a class="reference external" href="https://www.assetstore.unity3d.com/en/#!/content/57268">https://www.assetstore.unity3d.com/en/#!/content/57268</a>) please watch [this](<a class="reference external" href="https://www.youtube.com/watch?v=S7F9enxcvTE">https://www.youtube.com/watch?v=S7F9enxcvTE</a>) tutorial. Or follow these steps:</p>
+<p>1 Drag Admob prefab from <cite>Area730/Admob/Prefabs</cite> into your scene. You need to add this prefab to your game only once as <cite>AdmobManager</cite> is a singleton.</p>
+<p>![](<a class="reference external" href="https://www.dropbox.com/s/e1ojjhmewycn2bu/1.png?raw=1">https://www.dropbox.com/s/e1ojjhmewycn2bu/1.png?raw=1</a>)</p>
+<p>2 Set Admob unit ids and you are almost done</p>
+<p>![](<a class="reference external" href="https://www.dropbox.com/s/tiqm17u1nh19uin/2.png?raw=1">https://www.dropbox.com/s/tiqm17u1nh19uin/2.png?raw=1</a>)</p>
+<p>3 To show banner  call ` AdmobManager.Instance.RequestBanner(AdPosition position)` where position is <cite>enum</cite> and can be:
+<code class="docutils literal"><span class="pre">`c#</span>
+<span class="pre">AdPosition.Top</span>
+<span class="pre">AdPosition.Bottom</span>
+<span class="pre">AdPosition.TopLeft</span>
+<span class="pre">AdPosition.TopRight</span>
+<span class="pre">AdPosition.BottomLeft</span>
+<span class="pre">AdPosition.BottomRight</span>
+<span class="pre">`</span></code>
+You can also specify the size of the banner as second parameter. The default size is 320x50.
+To show interstitial you have first to load it by calling <cite>AdmobManager.Instance.RequestInterstitial()</cite>. After the interstitial is loaded, the <cite>OnInterstitialLoaded()</cite> callbacks will be invoked. Admob prefab comes with default attached callback functions (see <cite>Area730/Admob/Scripts/AdmobController.cs</cite>). You can also add your own if you want.</p>
+<p>![](<a class="reference external" href="https://www.dropbox.com/s/segyabyt9pa38iw/3.png?raw=1">https://www.dropbox.com/s/segyabyt9pa38iw/3.png?raw=1</a>)</p>
+<p>After the interstitial is loaded, you can show the ad by calling <code class="docutils literal"><span class="pre">`c#</span> <span class="pre">AdmobManager.Instance.ShowInterstitial()`</span></code>.</p>
+<p>#Building projects
+After configuring your mediation you need to build your game to mobile devices. Sometimes it might cause some errors this section helps you to solve it</p>
+<p>##IOS common errors</p>
+<p>1. When you use old version of Unity(4.6 and lower) the included [GoogleMobileAds.framework](<a class="reference external" href="https://developers.google.com/admob/ios/download">https://developers.google.com/admob/ios/download</a>) in folder <cite>Assets/Plugins/IOS</cite> will not automatically linking to your project. To solve this problem copy [GoogleMobileAds.framework](<a class="reference external" href="https://developers.google.com/admob/ios/download">https://developers.google.com/admob/ios/download</a>) to the root of your exported project.
+![GoogleMobileAds must be included to libraries](<a class="reference external" href="https://www.dropbox.com/s/iuuk2cz33v3wrvc/framework.png?raw=1">https://www.dropbox.com/s/iuuk2cz33v3wrvc/framework.png?raw=1</a>)</p>
+<ol class="arabic simple" start="2">
+<li>After that you need to config your <strong>build settings</strong></li>
 </ol>
-</div>
-<div class="section" id="video-tutorial">
-<h2>Video tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this headline">¶</a></h2>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-    <iframe src="https://www.youtube.com/embed/WMvIitdoVrg" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div><div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</div>
-<div class="section" id="components-description">
-<h2>Components description<a class="headerlink" href="#components-description" title="Permalink to this headline">¶</a></h2>
-<p><strong>Map Marker</strong></p>
-<img alt="_images/map_marker.png" src="_images/map_marker.png" />
-<ul class="simple">
-<li><strong>Marker Sprite</strong> – with this image the object will be marked on the map. Sample sprites are included in the package.</li>
-<li><strong>Marker Size</strong> – width and height of the marker.</li>
-<li><strong>Is Active</strong> – if false – the object won’t be shown on the map.</li>
-</ul>
-<p><strong>Map Controller</strong></p>
-<img alt="_images/map_canvas_controller.png" src="_images/map_canvas_controller.png" />
-<ul class="simple">
-<li><strong>Player transform</strong> - is transform of the object that is the midpoint of the map.</li>
-<li><strong>Radar distance</strong> – if the object is within this distance it will be show on the map. If objects are farther than this distance - they will be always on the border of the map or now shown at all, depending on the <em>Hide Out Of Radius</em> value.</li>
-<li><strong>Hide out of radius</strong> - if true - the objects that are farther that <em>Radar distance</em> will be hidden. Otherwise they will stick to map border as long as they are within <em>Max radar distance</em></li>
-<li><strong>Use opacity</strong> - if enabled, objects that are far then <em>Radar distance</em> will become more transparent as distance to player increases (but not more then <em>Max radar distance</em>)</li>
-<li><strong>Max radar distance</strong> - max possible radar distance (used only if <em>Hide out of radius</em> is false)</li>
-<li><strong>Rotate map</strong> - if enabled, the map will rotate and the player arrow will point straight forward, otherwise the map will be fixed and the arrow will show the direction.</li>
-<li><strong>Scale</strong> - scales radar distances</li>
-<li><strong>Minimal Opacity</strong> - minimal opacity for the markers that are farther than radar distance.</li>
-</ul>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-<p>Next pictures will show how the marker will be shown on the map depending on the options:</p>
-<ul class="simple">
-<li>Hide out of radius is <strong>true</strong>:</li>
-</ul>
-<img alt="_images/sample_1.png" src="_images/sample_1.png" />
-<ul class="simple">
-<li>Hide out of radius is <strong>false</strong>, use opacity is <strong>false</strong>:</li>
-</ul>
-<img alt="_images/sample_2.png" src="_images/sample_2.png" />
-<ul class="simple">
-<li>Hide out of radius is <strong>false</strong>, use opacity is <strong>true</strong>:</li>
-</ul>
-<img alt="_images/sample_3.png" src="_images/sample_3.png" />
-</div>
-</div>
+<blockquote>
+<div>2.1 Disable bit code ![Disable bitcode](<a class="reference external" href="https://www.dropbox.com/s/ro13o7xdypg8u68/bitcode.png?raw=1">https://www.dropbox.com/s/ro13o7xdypg8u68/bitcode.png?raw=1</a>)
+2.2 Enable Modules (C and Objective-C) ![Enable modules](<a class="reference external" href="https://www.dropbox.com/s/1f55jq0fycbpja8/modules.png?raw=1">https://www.dropbox.com/s/1f55jq0fycbpja8/modules.png?raw=1</a>)</div></blockquote>
+<p>3. If you use xCode 7.2  or higher you could get the following error because of incompatibility new xCode and Unity generated files.
+![NORETURN](<a class="reference external" href="https://www.dropbox.com/s/jjdlkhzjw146t1s/Noreturn.png?raw=1">https://www.dropbox.com/s/jjdlkhzjw146t1s/Noreturn.png?raw=1</a>)
+to solve this problem just delete circled <code class="docutils literal"><span class="pre">`NORETURN`</span></code> statment.</p>
+<p>##Android common errors
+1. When you trying to build your <cite>apk</cite> unity might throw build error. It might be caused of old Android API Level. The latest version of Admob library requires API Level 23. To download this packages go to you <a href="#id1"><span class="problematic" id="id2">**</span></a>Android SDK**(the path for it find here)![Android SDK path](<a class="reference external" href="https://www.dropbox.com/s/wyjzs6rs3wf27qv/androidSDKPath.png?raw=1">https://www.dropbox.com/s/wyjzs6rs3wf27qv/androidSDKPath.png?raw=1</a>)</p>
+<p>Then install packages from SDK manager.
+![SDK view](<a class="reference external" href="https://www.dropbox.com/s/6kmrwnxajnthjl7/SDK.png?raw=1">https://www.dropbox.com/s/6kmrwnxajnthjl7/SDK.png?raw=1</a>)</p>
+<p>If you have another errors please contact us <a class="reference external" href="mailto:support&#37;&#52;&#48;area730&#46;com">support<span>&#64;</span>area730<span>&#46;</span>com</a></p>
 
 
            </div>
