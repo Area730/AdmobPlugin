@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Import &mdash; AdmobPlugin 1.1 documentation</title>
+  <title>Admob Plugin &mdash; AdmobPlugin 1.1 documentation</title>
   
 
   
@@ -81,8 +81,9 @@
             
                 <!-- Local TOC -->
                 <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Import</a></li>
-<li><a class="reference internal" href="#building-projects">Building projects</a><ul>
+<li><a class="reference internal" href="#">Admob Plugin</a><ul>
+<li><a class="reference internal" href="#import">Import</a></li>
+<li><a class="reference internal" href="#building-projects">Building projects</a></li>
 <li><a class="reference internal" href="#ios-common-errors">IOS common errors</a></li>
 <li><a class="reference internal" href="#android-common-errors">Android common errors</a></li>
 </ul>
@@ -117,7 +118,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="#">Docs</a> &raquo;</li>
       
-    <li>Import</li>
+    <li>Admob Plugin</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -131,8 +132,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="import">
-<h1>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="admob-plugin">
+<h1>Admob Plugin<a class="headerlink" href="#admob-plugin" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="import">
+<h2>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Download this <a class="reference external" href="https://www.assetstore.unity3d.com/en/#!/content/57268">plugin</a></li>
 <li>Watch this tutorial:</li>
@@ -171,29 +174,30 @@ To show interstitial you have first to load it by calling <strong>AdmobManager.I
 <p>After the interstitial is loaded, you can show the ad by calling <strong>AdmobManager.Instance.ShowInterstitial()</strong>.</p>
 </div>
 <div class="section" id="building-projects">
-<h1>Building projects<a class="headerlink" href="#building-projects" title="Permalink to this headline">¶</a></h1>
+<h2>Building projects<a class="headerlink" href="#building-projects" title="Permalink to this headline">¶</a></h2>
 <p>After configuring your mediation you need to build your game to mobile devices. Sometimes it might cause some errors this section helps you to solve it</p>
+</div>
 <div class="section" id="ios-common-errors">
 <h2>IOS common errors<a class="headerlink" href="#ios-common-errors" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>When you use old version of Unity(4.6 and lower) the included <a class="reference external" href="https://developers.google.com/admob/ios/download">GoogleMobileAds.framework</a> in folder <em>Assets/Plugins/IOS</em> will not be automatically linked to your XCode project. To solve this problem copy <a class="reference external" href="https://developers.google.com/admob/ios/download">GoogleMobileAds.framework</a> to the root of your exported project.</li>
 </ol>
 <img alt="_images/framework.png" class="align-center" src="_images/framework.png" />
-<p>2. After that you need to config your <strong>build settings</strong>
-|</p>
+<ol class="arabic simple" start="2">
+<li>After that you need to config your <strong>build settings</strong></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <blockquote>
-<div><ul class="simple">
-<li>Disable bit code</li>
-</ul>
+<div><p>2.1 Disable bit code</p>
 <img alt="_images/bitcode.png" class="align-center" src="_images/bitcode.png" />
 </div></blockquote>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <blockquote>
-<div><ul class="simple">
-<li>Enable Modules (C and Objective-C)</li>
-</ul>
+<div><p>2.2 Enable Modules (C and Objective-C)</p>
 <img alt="_images/modules.png" class="align-center" src="_images/modules.png" />
 </div></blockquote>
 <ol class="arabic simple" start="3">
@@ -204,9 +208,7 @@ To show interstitial you have first to load it by calling <strong>AdmobManager.I
 </div>
 <div class="section" id="android-common-errors">
 <h2>Android common errors<a class="headerlink" href="#android-common-errors" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>When you trying to build your <strong>apk</strong> unity might throw build error. It might be caused of old Android API Level. The latest version of Admob library requires API Level 23. To download this packages go to you <strong>Android SDK</strong> (the path for it find here)</li>
-</ol>
+<p>When you trying to build your <strong>apk</strong> unity might throw build error. It might be caused of old Android API Level. The latest version of Admob library requires <strong>API Level 23</strong> . To download this packages go to you <strong>Android SDK</strong> (the path for it find here).</p>
 <img alt="_images/androidSDKPath.png" class="align-center" src="_images/androidSDKPath.png" />
 <p>Then install packages from SDK manager.</p>
 <img alt="_images/SDK.png" class="align-center" src="_images/SDK.png" />
