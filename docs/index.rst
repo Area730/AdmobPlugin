@@ -84,7 +84,7 @@ to solve this problem just delete circled ```NORETURN``` statment.
 
 Android common errors
 ---------------------
-1. When you trying to build your **apk** unity might throw build error. It might be caused of old Android API Level. The latest version of Admob library requires API Level 23. To download this packages go to you **Android SDK** (the path for it find here)
+1. When you trying to build your **apk** unity might throw build error. It might be caused of old Android API Level. The latest version of Admob library requires **API Level 23** . To download this packages go to you **Android SDK** (the path for it find here)
 
 .. image:: _static/androidSDKPath.png
     :align: center
