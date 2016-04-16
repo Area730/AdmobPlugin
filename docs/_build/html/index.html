@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Import &mdash; MiniMap 1.1 documentation</title>
+  <title>Import &mdash; AdmobPlugin 1.1 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="MiniMap 1.1 documentation" href="#"/> 
+    <link rel="top" title="AdmobPlugin 1.1 documentation" href="#"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -48,7 +48,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> MiniMap
+            <a href="#" class="icon icon-home"> AdmobPlugin
           
 
           
@@ -81,7 +81,8 @@
             
                 <!-- Local TOC -->
                 <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Import</a><ul>
+<li><a class="reference internal" href="#">Import</a></li>
+<li><a class="reference internal" href="#building-projects">Building projects</a><ul>
 <li><a class="reference internal" href="#ios-common-errors">IOS common errors</a></li>
 <li><a class="reference internal" href="#android-common-errors">Android common errors</a></li>
 </ul>
@@ -99,7 +100,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">MiniMap</a>
+        <a href="#">AdmobPlugin</a>
       </nav>
 
 
@@ -137,9 +138,9 @@ tutorial.</p>
 <p><a class="reference external" href="https://www.youtube.com/watch?v=S7F9enxcvTE"><img alt="IMAGE ALT TEXT HERE" src="https://img.youtube.com/vi/S7F9enxcvTE/0.jpg" /></a></p>
 <p>Or follow these steps:</p>
 <p>1 Drag Admob prefab from <code class="docutils literal"><span class="pre">Area730/Admob/Prefabs</span></code> into your scene. You need to add this prefab to your game only once as <code class="docutils literal"><span class="pre">AdmobManager</span></code> is a singleton.</p>
-<p><img alt="" src="https://www.dropbox.com/s/e1ojjhmewycn2bu/1.png?raw=1" /></p>
+<p><img alt="" src="_images/1.png" /></p>
 <p>2 Set Admob unit ids and you are almost done</p>
-<p><img alt="" src="https://www.dropbox.com/s/tiqm17u1nh19uin/2.png?raw=1" /></p>
+<p><img alt="" src="_images/2.png" /></p>
 <p>3 To show banner  call <code class="docutils literal"><span class="pre">AdmobManager.Instance.RequestBanner(AdPosition</span> <span class="pre">position)</span></code> where position is <code class="docutils literal"><span class="pre">enum</span></code> and can be:</p>
 <div class="highlight-c#"><div class="highlight"><pre><span></span><span class="n">AdPosition</span><span class="p">.</span><span class="n">Top</span>
 <span class="n">AdPosition</span><span class="p">.</span><span class="n">Bottom</span>
@@ -151,32 +152,34 @@ tutorial.</p>
 </div>
 <p>You can also specify the size of the banner as second parameter. The default size is 320x50.
 To show interstitial you have first to load it by calling <code class="docutils literal"><span class="pre">AdmobManager.Instance.RequestInterstitial()</span></code>. After the interstitial is loaded, the <code class="docutils literal"><span class="pre">OnInterstitialLoaded()</span></code> callbacks will be invoked. Admob prefab comes with default attached callback functions (see <code class="docutils literal"><span class="pre">Area730/Admob/Scripts/AdmobController.cs</span></code>). You can also add your own if you want.</p>
-<p><img alt="" src="https://www.dropbox.com/s/segyabyt9pa38iw/3.png?raw=1" /></p>
-<p>After the interstitial is loaded, you can show the ad by calling <code class="docutils literal"><span class="pre">c#</span> <span class="pre">AdmobManager.Instance.ShowInterstitial()</span></code>.</p>
-<p>#Building projects
-After configuring your mediation you need to build your game to mobile devices. Sometimes it might cause some errors this section helps you to solve it</p>
+<p><img alt="" src="_images/3.png" /></p>
+<p>After the interstitial is loaded, you can show the ad by calling <code class="docutils literal"><span class="pre">AdmobManager.Instance.ShowInterstitial()</span></code>.</p>
+</div>
+<div class="section" id="building-projects">
+<span id="building-projects"></span><h1>Building projects<a class="headerlink" href="#building-projects" title="Permalink to this headline">¶</a></h1>
+<p>After configuring your mediation you need to build your game to mobile devices. Sometimes it might cause some errors this section helps you to solve it</p>
 <div class="section" id="ios-common-errors">
 <span id="ios-common-errors"></span><h2>IOS common errors<a class="headerlink" href="#ios-common-errors" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li>When you use old version of Unity(4.6 and lower) the included <a class="reference external" href="https://developers.google.com/admob/ios/download">GoogleMobileAds.framework</a> in folder <code class="docutils literal"><span class="pre">Assets/Plugins/IOS</span></code> will not automatically linking to your project. To solve this problem copy <a class="reference external" href="https://developers.google.com/admob/ios/download">GoogleMobileAds.framework</a> to the root of your exported project.
-<img alt="GoogleMobileAds must be included to libraries" src="https://www.dropbox.com/s/iuuk2cz33v3wrvc/framework.png?raw=1" /></li>
+<img alt="GoogleMobileAds must be included to libraries" src="_images/framework.png" /></li>
 <li>After that you need to config your <strong>build settings</strong></li>
 </ol>
-<p>2.1 Disable bit code <img alt="Disable bitcode" src="https://www.dropbox.com/s/ro13o7xdypg8u68/bitcode.png?raw=1" />
-2.2 Enable Modules (C and Objective-C) <img alt="Enable modules" src="https://www.dropbox.com/s/1f55jq0fycbpja8/modules.png?raw=1" /></p>
+<p>2.1 Disable bit code <img alt="Disable bitcode" src="_images/bitcode.png" />
+2.2 Enable Modules (C and Objective-C) <img alt="Enable modules" src="_static/modules.png" /></p>
 <ol class="simple">
 <li>If you use xCode 7.2  or higher you could get the following error because of incompatibility new xCode and Unity generated files.
-<img alt="NORETURN" src="https://www.dropbox.com/s/jjdlkhzjw146t1s/Noreturn.png?raw=1" />
+<img alt="NORETURN" src="_images/Noreturn.png" />
 to solve this problem just delete circled <code class="docutils literal"><span class="pre">NORETURN</span></code> statment.</li>
 </ol>
 </div>
 <div class="section" id="android-common-errors">
 <span id="android-common-errors"></span><h2>Android common errors<a class="headerlink" href="#android-common-errors" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li>When you trying to build your <code class="docutils literal"><span class="pre">apk</span></code> unity might throw build error. It might be caused of old Android API Level. The latest version of Admob library requires API Level 23. To download this packages go to you <strong>Android SDK</strong>(the path for it find here)<img alt="Android SDK path" src="https://www.dropbox.com/s/wyjzs6rs3wf27qv/androidSDKPath.png?raw=1" /></li>
+<li>When you trying to build your <code class="docutils literal"><span class="pre">apk</span></code> unity might throw build error. It might be caused of old Android API Level. The latest version of Admob library requires API Level 23. To download this packages go to you <strong>Android SDK</strong>(the path for it find here)<img alt="Android SDK path" src="_images/androidSDKPath.png" /></li>
 </ol>
 <p>Then install packages from SDK manager.
-<img alt="SDK view" src="https://www.dropbox.com/s/6kmrwnxajnthjl7/SDK.png?raw=1" /></p>
+<img alt="SDK view" src="_images/SDK.png" /></p>
 <p>If you have another errors please contact us support&#64;area730.com</p>
 </div>
 </div>
