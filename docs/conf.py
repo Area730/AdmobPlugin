@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# MiniMap documentation build configuration file, created by
+# AdmobPlugin documentation build configuration file, created by
 # sphinx-quickstart on Tue Apr 12 02:04:32 2016.
 #
 # This file is execfile()d with the current directory set to its
@@ -54,8 +54,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'AdmobPlugin'
-copyright = u'2016, Vladyslav Melnychenko'
-author = u'Vladyslav Melnychenko'
+copyright = u'2016, Area730'
+author = u'Area730'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -129,7 +129,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
-#html_title = u'MiniMap v1.1'
+#html_title = u'AdmobPlugin v1.1'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -211,7 +211,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'MiniMapdoc'
+htmlhelp_basename = 'AdmobPlugindoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -233,7 +233,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'MiniMap.tex', u'MiniMap Documentation',
+    (master_doc, 'AdmobPlugin.tex', u'AdmobPlugin Documentation',
      u'Vladyslav Melnychenko', 'manual'),
 ]
 
@@ -263,7 +263,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'minimap', u'MiniMap Documentation',
+    (master_doc, 'AdmobPlugin', u'AdmobPlugin Documentation',
      [author], 1)
 ]
 
@@ -277,8 +277,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'MiniMap', u'MiniMap Documentation',
-     author, 'MiniMap', 'One line description of project.',
+    (master_doc, 'AdmobPlugin', u'AdmobPlugin Documentation',
+     author, 'AdmobPlugin', 'One line description of project.',
      'Miscellaneous'),
 ]
 
